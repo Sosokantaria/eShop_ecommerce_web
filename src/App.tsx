@@ -6,6 +6,7 @@ import { authContext } from "./contexts/authContext";
 import { PrivateRoutes } from "./views/private/privateRoutes";
 import PublicRoutes from "./views/public";
 import GlobalRoutes from "./views/global";
+import FourOhFour from "./views/fourOhFour"
 
 import { TUser_Role_Enum } from "./types/user.types";
 
@@ -22,7 +23,7 @@ export default function App() {
         ) : (
           <>{PublicRoutes}</>
         )}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/*" element={<FourOhFour/>} />
       </Routes>
     </Suspense>
   );

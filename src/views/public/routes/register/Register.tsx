@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import { Button, Form, Input } from "antd";
+import { PrimaryBtn, LinkBtn } from "../../../../components/buttons";
+
+import { Form, Input } from "antd";
 
 import axios from "axios";
 
@@ -45,9 +47,9 @@ export default function RegisterView() {
             <span className="flex  font-medium items-center justify-center text-[green]  space-x-3">
               <span>created user</span>
               <Link to="/login">
-                <Button type="link">
+                <LinkBtn type="submit">
                   <p>login</p>
-                </Button>
+                </LinkBtn>
               </Link>
             </span>
           ) : (
@@ -100,20 +102,18 @@ export default function RegisterView() {
               )}
               <div className="flex flex-col gap-y-4">
                 <div>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    className=" hover:focus:ring-4 focus:outline-none focus:ring-[#ffc653] font-medium  text-sm "
-                  >
+                  <PrimaryBtn
+                    type="submit"
+                   >
                     register
-                  </Button>
+                  </PrimaryBtn>
                 </div>
-                <p className="text-sm font-medium text-[white]  space-x-3">
+                <p className="text-sm font-medium text-[white] flex space-x-3">
                   <span>question for login</span>
                   <Link to="/login">
-                    <Button type="link">
+                    <LinkBtn type="submit">
                       <span>login</span>
-                    </Button>
+                    </LinkBtn>
                   </Link>
                 </p>
               </div>

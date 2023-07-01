@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "antd";
 import useOnclickOutside from "react-cool-onclickoutside";
 
 import {
@@ -8,7 +7,8 @@ import {
   authContext,
 } from "../../../contexts/authContext";
 import { RoleContext } from "../../../contexts/roleContext";
-import { TLocalstorage } from "../../../types/Localstorage";
+
+import { TextBtn } from "../../../components/buttons";
 
 import { HiOutlineLogout } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
@@ -21,7 +21,7 @@ export function ProfileInfo() {
   const [isopen, setIsopen] = useState<boolean>(false);
   function HandleLogout() {
     return (
-      localStorage.removeItem(TLocalstorage.ACCESSTOKEN),
+      localStorage.removeItem("accessToken"),
       setStatus(TAuthorisationStage.UNAUTHORIZED)
     );
   }
@@ -31,10 +31,10 @@ export function ProfileInfo() {
   return (
     <div className="relative flex flex-col items-right">
       <div
-        className="items-center rounded-lg p-2  hover:bg-[gray]"
+        className="items-center rounded-lg p-2"
         onClick={() => setIsopen(!isopen)}
       >
-        <CgProfile className="text-[white] " size={30} />
+        <CgProfile className="text-gray-300 hover:text-[#faad14]" size={30} />
       </div>
       {isopen && (
         <div
@@ -45,30 +45,28 @@ export function ProfileInfo() {
             <div className="flex flex-col m-2 items-center">
               {currentUser.user_role==="ADMIN" && (
                 <>
-                  <Button type="text">
+                  <TextBtn type="submit">
                     <Link
                       to="/admin-view"
-                      className="font-medium rounded-lg text-sm  "
                       onClick={() => setIsopen(!isopen)}
                     >
                       admin panel
                     </Link>
-                  </Button>
+                  </TextBtn>
                   <hr className=" mt-1 border-[black] sm:mx-auto  " />
                 </>
               )}
-              <Button type="text">
+              <TextBtn type="submit">
                 <Link
                   to="/user-view"
-                  className="font-medium rounded-lg text-sm  "
                   onClick={() => setIsopen(!isopen)}
                 >
                   profile info
                 </Link>
-              </Button>
+              </TextBtn>
               <hr className=" mt-1 border-[black] sm:mx-auto  " />
-              <Button
-                type="text"
+              <TextBtn
+                type="submit"
                 onClick={() => {
                   HandleLogout(), setIsopen(!isopen);
                 }}
@@ -76,20 +74,20 @@ export function ProfileInfo() {
               >
                 <span>logaut</span>
                 <HiOutlineLogout />
-              </Button>
+              </TextBtn>
             </div>
           ) : (
             <div className="flex flex-col m-1 items-center ">
               <Link to="login">
-                <Button type="text" onClick={() => setIsopen(!isopen)}>
+                <TextBtn type="submit" onClick={() => setIsopen(!isopen)}>
                   login
-                </Button>
+                </TextBtn>
               </Link>
               <hr className=" mt-1 text-[gray] sm:mx-auto  " />
               <Link to="register">
-                <Button type="text" onClick={() => setIsopen(!isopen)}>
+                <TextBtn type="submit" onClick={() => setIsopen(!isopen)}>
                   register
-                </Button>
+                </TextBtn>
               </Link>
             </div>
           )}

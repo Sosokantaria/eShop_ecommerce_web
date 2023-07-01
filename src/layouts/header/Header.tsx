@@ -27,18 +27,18 @@ export function Header() {
               <Link to="/">
                 <img
                   src={Logo}
-                  className="w-20  scale-150  bg-[white] rounded-full"
+                  className="w-20  scale-150  bg-[#fcc861] rounded-full"
                   alt=""
                 />
               </Link>
             </div>
             <div className="flex items-center md:space-x-6 sm:space-x-5 lg:space-x-5 min-[300px]:space-x-0 lg:order-2">
-              <div className="items-center rounded-lg p-2  hover:bg-[gray]">
-                <BiSearchAlt className="text-white" size={30} />
+              <div className="items-center rounded-lg p-2  ">
+                <BiSearchAlt className="text-gray-300 hover:text-[#faad14]" size={30} />
               </div>
               <ProfileInfo />
-              <div className="hover:bg-[gray] p-2  rounded-lg">
-                <BsCart4 className="text-[white] " size={30} />
+              <div className=" p-2  rounded-lg">
+                <BsCart4 className="text-gray-300 hover:text-[#faad14]" size={30} />
               </div>
             </div>
             <div

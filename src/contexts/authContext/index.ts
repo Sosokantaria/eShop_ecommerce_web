@@ -1,1 +1,1 @@
-export { authContext } from "./AuthContext";
+export { authContext, TAuthorisationStage } from "./AuthContext";

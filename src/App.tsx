@@ -1,7 +1,7 @@
 import { Suspense, useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { authContext } from "./contexts/authContext";
+import { TAuthorisationStage, authContext } from "./contexts/authContext";
 
 import { MainLayout } from "./layouts";
 import { PrivateRoutes } from "./views/private/privateRoutes";
@@ -12,7 +12,7 @@ import FourOhFour from "./views/fourOhFour";
 import { TUser_Role_Enum } from "./types/user.types";
 
 export default function App() {
-  const { isAuthorized } = useContext(authContext);
+  const { status } = useContext(authContext);
   const role = TUser_Role_Enum.USER;
 
   return (
@@ -20,7 +20,7 @@ export default function App() {
       <Routes>
         <Route element={<MainLayout />}>
           {GlobalRoutes}
-          {isAuthorized ? (
+          {status === TAuthorisationStage.AUTHORIZED  ? (
             <Route path="/*" element={<PrivateRoutes currentRole={role} />} />
           ) : (
             <>{PublicRoutes}</>

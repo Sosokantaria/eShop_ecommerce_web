@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import jwt_decode from "jwt-decode";
 
-import { Button, Form, Input } from "antd";
+import { PrimaryBtn, LinkBtn } from "../../../../components/buttons";
+
+import { Form, Input } from "antd";
 
 import {
   authContext,
@@ -83,18 +85,16 @@ export default function LoginView() {
               )}
               <div className="flex flex-col gap-y-4">
                 <div>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    className="  hover:focus:ring-4 focus:outline-none focus:ring-[#ffc653] font-medium  "
+                  <PrimaryBtn
+                    type="submit"
                   >
                     login
-                  </Button>
+                  </PrimaryBtn>
                 </div>
-                <span className="text-sm  text-[gray-1] font-medium  space-x-3">
+                <span className="text-sm flex text-[gray-1] font-medium  space-x-3">
                   <span>register question</span>
                   <Link to="/register">
-                    <Button type="link">register</Button>
+                    <LinkBtn type="submit">register</LinkBtn>
                   </Link>
                 </span>
               </div>

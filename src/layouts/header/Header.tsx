@@ -7,7 +7,7 @@ import { BsCart4 } from "react-icons/bs";
 import { ProfileInfo } from "./profileInfoSection";
 import { NavForRouteViews } from "../../components/navForRoureViews";
 import Logo from "./Logo/FqEhzfAVau7FtJvshFOPaUi72JCBk8mhIWUmOwwB.png";
-import { CartContext } from "../../contexts/cartContext";
+import { CartContext } from "../cartContext";
 
 
 export function Header() {

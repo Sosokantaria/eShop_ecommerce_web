@@ -1,6 +1,6 @@
 import { PropsWithChildren, useState } from "react";
 
-import { CartContext } from "../../contexts/cartContext";
+import { CartContext } from "../../layouts/cartContext";
 
 export function CartModalProvider({ children }: PropsWithChildren) {
   const [modal, setModal] = useState<boolean>(false);

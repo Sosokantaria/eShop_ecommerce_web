@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "react-use-cart";
 
 import { PrimaryBtn } from "../buttons";
 
@@ -15,9 +16,10 @@ type TProducts = {
 };
 
 export function ProductCard(props: TProducts) {
-  const { title, price, id } = props;
+  const { title, price, id, item } = props;
   const { status } = useContext(authContext);
 
+  const { addItem } = useCart();
   return (
     <>
       <div className="w-11/12 h-[300px] max-sm:h-[255px] max-s:h-[200px] max-s:w-9/12 max-sm:w-10/12 max-w-xs min-h-xs  rounded-lg    mt-3 m-auto">
@@ -90,8 +92,10 @@ export function ProductCard(props: TProducts) {
           <div className="flex items-center gap-3">
             <PrimaryBtn
               type="submit"
-              className="font-bold focus:ring-4 focus:outline-none focus:ring-[#f7cd79] "
-            >
+              onClick={()=>{
+                   addItem(item)
+              }}
+             >
               Addtocart
             </PrimaryBtn>
             {status === "authorized" ? (

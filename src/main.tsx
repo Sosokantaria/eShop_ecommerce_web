@@ -3,13 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-
 import { ConfigProvider } from "antd";
 import { BrowserRouter } from "react-router-dom";
+import { RoleProvider } from "./providers/roleProvider";
 import { AuthProvider } from "./providers/authProvider";
-import { RoleProvider } from "./providers/roleProvider/RoleProvider.tsx";
-
-
+import { CartProvider } from "react-use-cart";
+import { CartModalProvider } from "./providers/cartProvider";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -17,7 +16,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <AuthProvider>
         <RoleProvider>
           <ConfigProvider>
-            <App />
+            <CartProvider>
+              <CartModalProvider>
+                <App />
+              </CartModalProvider>
+            </CartProvider>
           </ConfigProvider>
         </RoleProvider>
       </AuthProvider>

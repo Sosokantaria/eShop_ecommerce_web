@@ -1,7 +1,6 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 
 import { authContext, TAuthorisationStage } from "../../contexts/authContext";
-import { TLocalstorage } from "../../types/Localstorage";
 
 
 export function AuthProvider({ children }: PropsWithChildren) {

@@ -24,7 +24,7 @@ export function ProductCard(props: TProducts) {
     <>
       <div className="w-11/12 h-[300px] max-sm:h-[255px] max-s:h-[200px] max-s:w-9/12 max-sm:w-10/12 max-w-xs min-h-xs  rounded-lg    mt-3 m-auto">
         <img
-          className="p-8 bg-[red]  h-full   rounded-lg"
+          className="p-8 bg-[#364d79]  h-full   rounded-lg"
           alt="product image"
         />
       </div>

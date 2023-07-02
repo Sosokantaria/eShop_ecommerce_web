@@ -37,6 +37,20 @@ export const LinkBtn = styled.button`
   }
 `;
 
+export const DefaultBtn = styled.button`
+  color: #faad14;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: bold;
+  font-weight: 600;
+  padding: 4px 12px;
+  &:hover {
+    color: #fcc861;
+  }
+`;
 
 export const TextBtn = styled.button`
   color: #faad14;

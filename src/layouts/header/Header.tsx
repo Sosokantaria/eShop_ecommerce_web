@@ -1,3 +1,4 @@
+import { useContext} from "react"
 import { Link } from "react-router-dom";
 
 import { CgPhone } from "react-icons/cg";
@@ -6,7 +7,11 @@ import { BsCart4 } from "react-icons/bs";
 import { ProfileInfo } from "./profileInfoSection";
 import { NavForRouteViews } from "../../components/navForRoureViews";
 import Logo from "./Logo/FqEhzfAVau7FtJvshFOPaUi72JCBk8mhIWUmOwwB.png";
+import { CartContext } from "../../contexts/cartContext";
+
+
 export function Header() {
+  const {setModal}=useContext(CartContext)
   return (
     <header className=" bg-[#1f2605] ">
       <div className="w-full pt-1  ">
@@ -37,7 +42,7 @@ export function Header() {
                 <BiSearchAlt className="text-gray-300 hover:text-[#faad14]" size={30} />
               </div>
               <ProfileInfo />
-              <div className=" p-2  rounded-lg">
+              <div className=" p-2  rounded-lg" onClick={()=>setModal(true)}>
                 <BsCart4 className="text-gray-300 hover:text-[#faad14]" size={30} />
               </div>
             </div>

@@ -1,1 +1,1 @@
-export { PrimaryBtn, LinkBtn, TextBtn } from "./Sbuttons";
+export { PrimaryBtn, LinkBtn, TextBtn, DefaultBtn } from "./Sbuttons";

@@ -5,7 +5,7 @@ import { authContext } from "../../../contexts/authContext";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { DefaultBtn, PrimaryBtn, TextBtn } from "../../../components/buttons";
-import { CartContext } from "../../../contexts/cartContext";
+import { CartContext } from "../../cartContext";
 
 export function CartModal() {
   const { modal, setModal } = useContext(CartContext);

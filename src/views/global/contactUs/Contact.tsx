@@ -3,8 +3,9 @@ import { PrimaryBtn } from "../../../components/buttons";
 
 export default function ContactUs() {
   return (
+    <div className="rounded-lg border-[gray] bg-[#fce2ad9a] shadow p-6 m-6">
       <section className="bg-white ">
-        <h2 className="my-10 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+        <h2 className="pt-10 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           Contact Us
         </h2>
         <p className="mb-8  font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
@@ -60,5 +61,6 @@ export default function ContactUs() {
           </form>
         </div>
       </section>
+    </div>
   );
 }

@@ -20,13 +20,13 @@ export default function App() {
       <Routes>
         <Route element={<MainLayout />}>
           {GlobalRoutes}
-          {status === TAuthorisationStage.AUTHORIZED  ? (
+          {status === TAuthorisationStage.AUTHORIZED ? (
             <Route path="/*" element={<PrivateRoutes currentRole={role} />} />
           ) : (
             <>{PublicRoutes}</>
           )}
-          <Route path="/*" element={<FourOhFour />} />
         </Route>
+        <Route path="/*" element={<FourOhFour />} />
       </Routes>
     </Suspense>
   );

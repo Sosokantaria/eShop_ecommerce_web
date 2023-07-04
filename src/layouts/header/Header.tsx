@@ -71,8 +71,8 @@ export function Header() {
                 <NavForRouteViews />
               </div>
             </div>
-            <div className="hidden items-center lg:flex  ">
-              <div className="grid grid-cols-3  lg:gap-x-16 md:gap-x-10  font-medium ">
+            <div className="hidden items-center lg:flex absolute z-20  ">
+              <div className="grid grid-cols-3 lg:gap-x-16 md:gap-x-10  font-medium ">
                 <NavForRouteViews />
               </div>
             </div>

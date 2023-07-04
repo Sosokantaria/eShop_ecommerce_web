@@ -20,10 +20,6 @@ export default function ProductsView() {
     try {
       const resp = await axios.get("http://localhost:3001/products");
       setProducts(resp.data);
-      
-      resp.data.forEach((product:any)=>console.log(product.category)
-      )
-      
       setLoading(false);
     } catch (error) {
     }

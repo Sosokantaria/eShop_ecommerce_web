@@ -1,7 +1,7 @@
 
 import { NavForRouteViews } from "../../components/navForRoureViews";
-import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
-import { CgPhone } from "react-icons/cg";
+import { Address } from "../../components/address";
+
 
 export function Footer() {
   return (
@@ -15,18 +15,7 @@ export function Footer() {
               <NavForRouteViews />
             </div>
             <div className="flex flex-wrap gap-x-4 m-4 text-sm font-bold  sm:mb-0 ">
-              <div className="flex gap-2 items-center">
-                <HiOutlineMail className="scale-150  " />
-                <span>eShop@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-x-2  text-[red]  text-sm">
-                <CgPhone className="scale-150  " />
-                <span>hotline</span>
-              </div>
-              <div className="flex gap-2 items-center">
-                <HiOutlineLocationMarker className="scale-150  " />
-                <span>location</span>
-              </div>
+            <Address/>
             </div>
           </div>
           <hr className="my-6 border-gray-200 sm:mx-auto  lg:my-8" />

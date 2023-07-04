@@ -67,11 +67,11 @@ export function Header() {
               data-collapse-toggle="mobile-menu-2"
               className="inline-flex flex-col top-40 gap-2  right-1 absolute bg-[#1f2605]  items-center justify-center  text-sm text-[white] rounded-lg lg:hidden  dark:text-[white] "
             >
-              <div className="grid grid-rows-3 gap-5 m-2.5  items-center justify-center font-medium">
+              <div className="grid grid-rows-3 gap-5 m-2.5  z-20 items-center justify-center font-medium">
                 <NavForRouteViews />
               </div>
             </div>
-            <div className="hidden items-center lg:flex absolute z-20  ">
+            <div className="hidden items-center lg:flex  ">
               <div className="grid grid-cols-3 lg:gap-x-16 md:gap-x-10  font-medium ">
                 <NavForRouteViews />
               </div>

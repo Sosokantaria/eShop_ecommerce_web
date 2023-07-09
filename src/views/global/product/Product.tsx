@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ProductCard } from "../../../components/productCard";
+import { ProductCard } from "../../../components/producdCard";
 
 type TProductdata = {
   id: string;
@@ -35,8 +35,8 @@ export default function ProductView() {
 
   return (
     <div>
-      <div className="flex flex-col flex-wrap gap-10 border-[gray] bg-[#fce2ad9a] rounded-lg shadow p-6 m-6">
-        <div className="lg:grid lg:grid-cols-3 flex flex-wrap gap-6 items-center ">
+      <div className=" flex flex-col gap-5 border-[gray] bg-[#fce2ad9a] rounded-lg shadow p-6 m-6">
+        <div className="flex flex-wrap 2xl:gap-80 2xl:ml-20 xl:gap-60 xl:ml-10 lg:gap-40 lg:ml-8 md:gap-32 md:ml-4 sm:gap-10 s1:gap-3">
           <ProductCard
             id={productData?.id}
             price={productData?.price}

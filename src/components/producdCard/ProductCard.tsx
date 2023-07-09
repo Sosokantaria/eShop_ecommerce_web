@@ -6,14 +6,7 @@ import { PrimaryBtn } from "../buttons";
 
 import { authContext } from "../../contexts/authContext";
 
-type TProducts = {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  price: number;
-  item:any
-};
+import type { TProducts } from "../../types/product";
 
 export function ProductCard(props: TProducts) {
   const { title, price, id, item } = props;
@@ -22,19 +15,19 @@ export function ProductCard(props: TProducts) {
   const { addItem } = useCart();
   return (
     <>
-      <div className="w-11/12 h-[300px] max-sm:h-[255px] max-s:h-[200px] max-s:w-9/12 max-sm:w-10/12 max-w-xs min-h-xs  rounded-lg    mt-3 m-auto">
+      <div>
         <img
-          className="p-8 bg-[#364d79]  h-full   rounded-lg"
+          className="bg-[#364d79] w-full h-auto min-w-[250px]  min-h-[250px]  rounded-lg"
           alt="product image"
         />
       </div>
-      <div className="px-5 pb-5">
+      <div className="flex flex-wrap  flex-col items-center justify-center">
         <Link to={`/product/${id}`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
             {title}
           </h5>
         </Link>
-        <div className="flex items-center mt-2.5 mb-5">
+        <div className="flex items-center my-2.5">
           <svg
             aria-hidden="true"
             className="w-5 h-5 text-yellow-300"
@@ -84,7 +77,7 @@ export function ProductCard(props: TProducts) {
             5.0
           </span>
         </div>
-        <div className="flex flex-wrap gap-8 items-center justify-between">
+        <div className="flex flex-col flex-wrap gap-3 items-center justify-between">
           <span className="text-3xl items-center font-bold flex gap-2 text-gray-900 ">
             <span> price:</span>
             <span>{price}</span>

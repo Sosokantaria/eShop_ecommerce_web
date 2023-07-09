@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import { PublicAxios } from "../../../utils/PublicAxios";
 import axios from "axios";
-import { ProductCard } from "../../../components/productCard";
+import { ProductCard } from "../../../components/producdCard";
 
 type TProducts = {
   id: string;
@@ -39,7 +39,7 @@ export default function ProductsView() {
         <>
           {products.map((product:TProducts) => (
             <div
-              className="w-full max-w-sm bg-gray-200 flex flex-col gap-3 rounded-lg shadow "
+              className="w-full max-w-sm bg-gray-200 flex flex-col flex-wrap justify-center items-center gap-3 py-5 rounded-lg shadow "
               key={product.id}
             >
               <ProductCard

@@ -1,0 +1,1 @@
+export { SearchModalProvider } from "./SearchProider";

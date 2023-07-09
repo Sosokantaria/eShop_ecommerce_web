@@ -9,9 +9,11 @@ import { ProfileInfo } from "./profileInfoSection";
 import { NavForRouteViews } from "../../components/navForRoureViews";
 import Logo from "./Logo/FqEhzfAVau7FtJvshFOPaUi72JCBk8mhIWUmOwwB.png";
 import { CartContext } from "../../contexts/cartContext";
+import { SearchContext } from "../../contexts/searchContext";
 
 export function Header() {
   const { setModal } = useContext(CartContext);
+  const { setSearch } = useContext(SearchContext);
   const { totalItems, cartTotal } = useCart();
   return (
     <header className=" bg-[#1f2605] ">
@@ -26,7 +28,7 @@ export function Header() {
         </div>
       </div>
       <hr className=" mt-1 border-gray-200 sm:mx-auto  " />
-      <div className="w-[90%] m-auto ">
+      <div className="w-[80%] m-auto ">
         <nav>
           <div className="flex  justify-between w-full items-center  mx-auto max-w-screen-xl">
             <div className="h-20 flex-wrap overflow-hidden px-6  lg:px-6">
@@ -39,7 +41,10 @@ export function Header() {
               </Link>
             </div>
             <div className="flex items-center md:space-x-6 sm:space-x-5 lg:space-x-5 min-[300px]:space-x-0 lg:order-2">
-              <div className="items-center rounded-lg p-2  ">
+              <div
+                className="items-center rounded-lg p-2"
+                onClick={() => setSearch(true)}
+              >
                 <BiSearchAlt
                   className="text-gray-300 hover:text-[#faad14]"
                   size={30}
@@ -58,9 +63,10 @@ export function Header() {
                   <div className="text-[#faad14] absolute right-0 top-0 origin-top-right">
                     {totalItems}
                   </div>
-                )} <div className="text-gray-300 font-bold absolute ml-[35px] bottom-1 origin-top-right">
-                {cartTotal}$
-              </div>
+                )}
+                <div className="text-gray-300 font-bold absolute ml-[35px] bottom-1 origin-top-right">
+                  {cartTotal}$
+                </div>
               </div>
             </div>
             <div

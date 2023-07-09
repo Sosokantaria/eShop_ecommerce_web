@@ -93,7 +93,9 @@ export function ProductCard(props: TProducts) {
             </PrimaryBtn>
             {status === "authorized" ? (
               <Link to="/payment" className="w-full">
-                <PrimaryBtn type="submit" className="w-full font-bold">
+                <PrimaryBtn type="submit" className="w-full font-bold"  onClick={()=>{
+                   addItem(item)
+              }}>
                  bye
                 </PrimaryBtn>
               </Link>

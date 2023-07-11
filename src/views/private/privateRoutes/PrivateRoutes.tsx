@@ -40,7 +40,7 @@ export function PrivateRoutes({ currentRole }: PrivateRouteProps) {
         element={
           <PrivateRoute
             currentRole={currentRole}
-            roles={[TUser_Role_Enum.ADMIN]}
+            roles={[...Object.values(TUser_Role_Enum),TUser_Role_Enum.ADMIN]}
             children={<AdminView />}
           />
         }

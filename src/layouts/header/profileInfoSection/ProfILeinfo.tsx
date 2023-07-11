@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import useOnclickOutside from "react-cool-onclickoutside";
 
 import {
@@ -15,7 +15,7 @@ import { CgProfile } from "react-icons/cg";
 
 
 export function ProfileInfo() {
-  
+  const navigate=useNavigate()
   const { currentUser } = useContext(RoleContext);
   const { status, setStatus } = useContext(authContext);
   const [isopen, setIsopen] = useState<boolean>(false);
@@ -69,6 +69,7 @@ export function ProfileInfo() {
                 type="submit"
                 onClick={() => {
                   HandleLogout(), setIsopen(!isopen);
+                  navigate("/")
                 }}
                 className="flex items-center gap-1"
               >

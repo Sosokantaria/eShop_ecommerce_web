@@ -45,7 +45,7 @@ export function Search() {
   }, [searchValue]);
 
   return (
-    <>
+    <div className=" bg-[gray] fixed overflow-hidden rounded-lg w-[80%] z-40">
       {search && (
         <div
           className="relative z-40"
@@ -119,6 +119,6 @@ export function Search() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

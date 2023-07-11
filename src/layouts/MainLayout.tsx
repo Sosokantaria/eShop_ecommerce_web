@@ -7,13 +7,11 @@ import { Search } from "./header/searchModal";
 
 export function MainLayout() {
   return (
-    <div>
+    <div className="h-[100vh] overflow-y-scroll scrollbar-hide ">
       <Header />
       <CartModal />
-      <div className=" bg-[gray] fixed overflow-hidden rounded-lg w-[80%] z-40">
         <Search />
-      </div>
-      <div className="w-[90%] m-auto min-h-[100vh]">
+      <div className="w-[90%] m-auto h-[120vh] overflow-y-scroll  ">
         <Outlet />
       </div>
       <Footer />

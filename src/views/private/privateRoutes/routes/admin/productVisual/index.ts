@@ -1,0 +1,1 @@
+export { ProductVisual } from "./ProductVisual";

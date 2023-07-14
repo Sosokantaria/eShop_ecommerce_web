@@ -25,7 +25,7 @@ export default function DeleteProduct() {
 
   return (
     <section >
-      <div className="bg-[#1f2605] py-8 px-4 mx-auto max-w-2xl lg:py-16 rounded-lg min-w-[280px]">
+      <div className="bg-[#1f2605] py-8 px-4 mx-auto min-w-[50%] max-w-2xl rounded-lg w-full">
         <h2 className="mb-4 text-xl font-bold text-[white]">
          delete product
         </h2>

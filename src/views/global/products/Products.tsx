@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-// import { PublicAxios } from "../../../utils/PublicAxios";
 import axios from "axios";
 import { ProductCard } from "../../../components/producdCard";
+
+import { Filter } from "../../../components/filterproducts";
 
 type TProducts = {
   id: string;
@@ -21,8 +22,7 @@ export default function ProductsView() {
       const resp = await axios.get("http://localhost:3001/products");
       setProducts(resp.data);
       setLoading(false);
-    } catch (error) {
-    }
+    } catch (error) {}
   }
 
   useEffect(() => {
@@ -30,29 +30,32 @@ export default function ProductsView() {
   }, []);
 
   return (
-    <div className="flex flex-wrap m-auto   w-full p-6 justify-center gap-3">
+    <div>
       {loading ? (
         <p className=" flex justify-center text-[black]  m-auto font-bold">
           loading...
         </p>
       ) : (
-        <>
-          {products.map((product:TProducts) => (
-            <div
-              className="w-full max-w-sm bg-gray-200 flex flex-col flex-wrap justify-center items-center gap-3 py-5 rounded-lg shadow "
-              key={product.id}
-            >
-              <ProductCard
-                id={product.id}
-                title={product.title}
-                description={product.description}
-                category={product.category}
-                price={product.price}
-                item={product}
-              />
-            </div>
-          ))}
-        </>
+        <div>
+          <Filter />
+          <div className="flex flex-wrap m-auto   w-full p-6 justify-center gap-3">
+            {products.map((product: TProducts) => (
+              <div
+                className="w-full max-w-sm bg-gray-200 flex flex-col flex-wrap justify-center items-center gap-3 py-5 rounded-lg shadow "
+                key={product.id}
+              >
+                <ProductCard
+                  id={product.id}
+                  title={product.title}
+                  description={product.description}
+                  category={product.category}
+                  price={product.price}
+                  item={product}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );

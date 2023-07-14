@@ -31,7 +31,7 @@ export default function CreateProduct() {
 
   return (
     <section >
-      <div className="py-8 px-4 mx-auto max-w-2xl rounded-lg bg-[#1f2605]  lg:py-16">
+      <div className="py-8 px-4 mx-auto max-w-2xl rounded-lg bg-[#1f2605]  ">
         <h2 className="mb-4 text-xl font-bold text-[white]">
           Create a new product
         </h2>
@@ -85,7 +85,7 @@ export default function CreateProduct() {
               <textarea
                 {...register("description", { required: true })}
                 id="description"
-                className="block p-2.5 w-full text-sm text-[white] bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
+                className="block p-2.5 w-full text-sm text-[black] bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
                 placeholder="Your description here"
               ></textarea>
             </div>

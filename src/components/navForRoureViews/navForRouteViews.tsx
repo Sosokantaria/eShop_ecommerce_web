@@ -1,31 +1,47 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { IoIosHome } from "react-icons/io";
 import { BsInfoLg, BsShop } from "react-icons/bs";
 
+const enum View {
+  HOME = "home",
+  SHOP = "shop",
+  CONTUCTUS = "contactUs",
+}
+
 export function NavForRouteViews() {
+  const [active, setActive] = useState<View>(View.HOME);
   return (
-    <>
+    <><div  onClick={() => setActive(View.HOME)}>
       <Link
         to="/"
-        className=" flex flex-col items-center gap-y-2 px-1 py-1 text-gray-500 hover:text-[#faad14] font-medium rounded-lg text-sm   "
+        className=" flex flex-col items-center gap-y-2 px-1 py-1 text-gray-500  font-medium rounded-lg text-sm   "
       >
         <IoIosHome className="text-[#fcc861] scale-150  " />
-        <span>home</span>
-      </Link>
+        <div style={{ color: active === "home" ? "white" : "gray" }}>
+          home
+        </div>
+      </Link></div>
       <Link
         to="Products"
-        className="flex flex-col items-center gap-y-2 px-1 py-1 text-gray-500 hover:text-[#faad14]  font-medium rounded-lg text-sm   "
+        onClick={() => setActive(View.SHOP)}
+        className="flex flex-col items-center gap-y-2 px-1 py-1 text-gray-500   font-medium rounded-lg text-sm   "
       >
         <BsShop className="text-[#fcc861] scale-150  " />
-        <span>shop</span>
+        <div style={{ color: active === "shop" ? "white" : "gray" }}>
+          shop
+        </div>
       </Link>
       <Link
         to="/Contact-us"
-        className="flex flex-col items-center gap-y-2 py-1 text-gray-500 hover:text-[#faad14] font-medium rounded-lg text-sm    "
+        onClick={() => setActive(View.CONTUCTUS)}
+        className="flex flex-col items-center gap-y-2 py-1 text-gray-500  font-medium rounded-lg text-sm    "
       >
         <BsInfoLg className="text-[#fcc861] scale-150  " />
-        <span>contact us</span>
+        <div style={{ color: active === "contactUs" ? "white" : "gray" }}>
+          contact us
+        </div>
       </Link>
     </>
   );

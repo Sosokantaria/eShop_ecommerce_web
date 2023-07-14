@@ -17,7 +17,6 @@ const enum View {
 
 export default function AdminView() {
   const [view, setView] = useState<View>(View.CREATE);
-  const [active, setActive] = useState<View>(View.CREATE);
 
   return (
     <div className="flex flex-col space-y-5 items-center w-full justify-start  ">
@@ -27,21 +26,20 @@ export default function AdminView() {
           className="flex items-center   space-x-2.5"
           onClick={(e) => {e.preventDefault()
             setView(View.CREATE);
-            setActive(View.CREATE);
           }}
         >
           <span
             className="flex items-center justify-center w-8 h-8 border border-black rounded-full shrink-0 "
-            style={{ borderColor: active === "create" ? "red" : "black" }}
+            style={{ borderColor: view === "create" ? "red" : "black" }}
           >
             <MdOutlineCreateNewFolder
-              style={{ color: active === "create" ? "red" : "black" }}
+              style={{ color: view === "create" ? "red" : "black" }}
             />
           </span>
           <span>
             <h3
               className="font-medium leading-tight"
-              style={{ color: active === "create" ? "red" : "black" }}
+              style={{ color: view === "create" ? "red" : "black" }}
             >
               create product
             </h3>
@@ -51,21 +49,20 @@ export default function AdminView() {
           className="flex items-center   space-x-2.5"
           onClick={(e) => {e.preventDefault()
             setView(View.UPDATE);
-            setActive(View.UPDATE);
           }}
         >
           <span
             className="flex items-center justify-center w-8 h-8 border  border-black rounded-full shrink-0 "
-            style={{ borderColor: active === "update" ? "red" : "black" }}
+            style={{ borderColor: view === "update" ? "red" : "black" }}
           >
             <RxUpdate
-              style={{ color: active === "update" ? "red" : "black" }}
+              style={{ color: view === "update" ? "red" : "black" }}
             />
           </span>
           <span>
             <h3
               className="font-medium leading-tight"
-              style={{ color: active === "update" ? "red" : "black" }}
+              style={{ color: view === "update" ? "red" : "black" }}
             >
               update product
             </h3>
@@ -75,21 +72,20 @@ export default function AdminView() {
           className="flex items-center  space-x-2.5"
           onClick={(e) => {e.preventDefault()
             setView(View.DELETE);
-            setActive(View.DELETE);
           }}
         >
           <span
             className="flex items-center justify-center w-8 h-8 border border-black rounded-full shrink-0 "
-            style={{ borderColor: active === "delete" ? "red" : "black" }}
+            style={{ borderColor: view === "delete" ? "red" : "black" }}
           >
             <MdDeleteForever
-              style={{ color: active === "delete" ? "red" : "black" }}
+              style={{ color: view === "delete" ? "red" : "black" }}
             />
           </span>
           <span>
             <h3
               className="font-medium leading-tight"
-              style={{ color: active === "delete" ? "red" : "black" }}
+              style={{ color: view === "delete" ? "red" : "black" }}
             >
               delete product
             </h3>

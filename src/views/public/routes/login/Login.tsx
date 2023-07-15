@@ -2,6 +2,7 @@ import { useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import jwt_decode from "jwt-decode";
 
 import { PrimaryBtn, LinkBtn } from "../../../../components/buttons";
@@ -23,6 +24,7 @@ type TLoginForm = {
 };
 
 export default function LoginView() {
+  const{t}=useTranslation()
   const { setCurrentUser } = useContext(RoleContext);
   const { setStatus } = useContext(authContext);
   const {
@@ -54,7 +56,7 @@ export default function LoginView() {
         <div className="w-full bg-white rounded-lg  shadow sm:max-w-md  ">
           <div className="p-6 space-y-4 text-[white] bg-[#1f2605] rounded-lg md:space-y-6 sm:p-8">
             <div className="flex justify-center">
-              <h1 className="text-xl font-bold  md:text-2xl">login</h1>
+              <h1 className="text-xl font-bold  md:text-2xl">{t("titles.login")}</h1>
             </div>
             <Form
               name="basic"
@@ -64,15 +66,15 @@ export default function LoginView() {
             >
               <Form.Item
                 name="email"
-                label={<label style={{ color: "white" }}>email</label>}
+                label={<label style={{ color: "white" }}>{t("labels.email")}</label>}
                 rules={[
                   { required: true, message: "Please input your username!" },
                 ]}
               >
-                <Input {...register("email")} placeholder={"email"} />
+                <Input {...register("email")} placeholder={t("placeHolder.email")} />
               </Form.Item>
               <Form.Item
-                label={<label style={{ color: "white" }}>password</label>}
+                label={<label style={{ color: "white" }}>{t("labels.password")}</label>}
                 name="password"
                 rules={[
                   { required: true, message: "Please input your password!" },
@@ -88,13 +90,13 @@ export default function LoginView() {
                   <PrimaryBtn
                     type="submit"
                   >
-                    login
+                    {t("btn.login")}
                   </PrimaryBtn>
                 </div>
                 <span className="text-sm flex text-[gray-1] font-medium  space-x-3">
-                  <span>register question</span>
+                  <span>{t("texts.question.login")}</span>
                   <Link to="/register">
-                    <LinkBtn type="submit">register</LinkBtn>
+                    <LinkBtn type="submit"> {t("btn.register")}</LinkBtn>
                   </Link>
                 </span>
               </div>

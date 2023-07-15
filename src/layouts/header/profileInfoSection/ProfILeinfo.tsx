@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Link,useNavigate } from "react-router-dom";
 import useOnclickOutside from "react-cool-onclickoutside";
 
@@ -15,6 +16,7 @@ import { CgProfile } from "react-icons/cg";
 
 
 export function ProfileInfo() {
+  const{t}=useTranslation()
   const navigate=useNavigate()
   const { currentUser } = useContext(RoleContext);
   const { status, setStatus } = useContext(authContext);
@@ -50,7 +52,7 @@ export function ProfileInfo() {
                       to="/admin-view"
                       onClick={() => setIsopen(!isopen)}
                     >
-                      admin panel
+                      {t("btn.adminPanel")}
                     </Link>
                   </TextBtn>
                   <hr className=" mt-1 border-[black] sm:mx-auto  " />
@@ -61,7 +63,7 @@ export function ProfileInfo() {
                   to="/user-view"
                   onClick={() => setIsopen(!isopen)}
                 >
-                  profile info
+                  {t("btn.profile_info")}
                 </Link>
               </TextBtn>
               <hr className=" mt-1 border-[black] sm:mx-auto  " />
@@ -73,7 +75,7 @@ export function ProfileInfo() {
                 }}
                 className="flex items-center gap-1"
               >
-                <span>logaut</span>
+                <span>{t("btn.logout")}</span>
                 <HiOutlineLogout />
               </TextBtn>
             </div>
@@ -81,13 +83,13 @@ export function ProfileInfo() {
             <div className="flex flex-col m-1 items-center ">
               <Link to="login">
                 <TextBtn type="submit" onClick={() => setIsopen(!isopen)}>
-                  login
+                {t("btn.login")}
                 </TextBtn>
               </Link>
               <hr className=" mt-1 text-[gray] sm:mx-auto  " />
               <Link to="register">
                 <TextBtn type="submit" onClick={() => setIsopen(!isopen)}>
-                  register
+                {t("btn.register")}
                 </TextBtn>
               </Link>
             </div>

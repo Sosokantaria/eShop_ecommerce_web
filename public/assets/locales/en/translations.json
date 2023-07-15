@@ -1,0 +1,80 @@
+{
+    "btn":{
+        "home":"Home",
+        "shop":"Shop",
+        "contuct_us":"Contuct Us",
+        "login":"Login",
+        "register":"Register",
+        "logout":"Log Out",
+        "adminPanel":"Admin Panel",
+        "profile_info":"Profile Info",
+        "filter":"Filter",
+        "remove_all_items":"Remove All Items",
+        "buy":"Buy",
+        "create_product":"Create Product",
+        "update_product":"Update Product",
+        "delete_product":"Delete Product",
+        "checkboxes":{
+            "update_title":"Update by Title",
+            "update_price":"Update by Price",
+            "update_description":"Update by Description"
+        },
+        "send_message":"Send Message",
+        "cancel":" cancel",
+        "save": "Save",
+        "change":"Change",
+        "add_to_cart":"Add To Cart",
+        "pay":"Pay",
+        "remove":"Remove"
+    },
+    "labels":{
+        "userName":"Username",
+        "email":"Email",
+        "password":"Password",
+        "subject":"Subject",
+        "your_message":"Your Message",
+        "from":"from",
+        "to":"to",
+        "title":"Title",
+        "price":"Price",
+        "category":"Category",
+        "description":"Description",
+        "name_on_card":"Name on card",
+        "expiration_date":"Expiration date",
+        "card_number":"Card number",
+        "security_code":"Security code"
+    },
+    "placeHolder":{
+        "email":"name@gmail.com",
+        "subject":"Let us know how we can help you",
+        "leave_coment": "Leave a comment...",
+        "search":"Search ...",
+        "userName":"Username",
+        "product_title":"Type product title",
+        "description":"Product description"
+    },
+    "titles":{
+        "login":"Login",
+        "register":"Register",
+        "contuct_us":"Contuct Us",
+        "filter":"Filter by Price:",
+        "create_product":"Create Product",
+        "delete_product":"Delete Product",
+        "update_product":"Update Product",
+        "payment":"Secure payment info",
+        "cart":"Shoping cart"
+    },
+    "texts":{
+        "contuct_us":"Got a technical issue? Want to send feedback? Need details? Let us know.",
+        "price":"Price:",
+        "question":{
+            "login":"You don't have an account?",
+            "register":"Already have an account?"
+        },
+        "created_user":"Account created successfully!",
+        "total_items":"Total items:",
+        "subtotal":"Amount to be paid:"
+        
+    }
+    
+}

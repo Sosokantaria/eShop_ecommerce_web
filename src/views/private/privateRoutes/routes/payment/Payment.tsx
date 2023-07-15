@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useCart } from "react-use-cart";
+import { useTranslation } from "react-i18next";
+
 import { PrimaryBtn } from "../../../../../components/buttons";
 import { ToastContainer, toast } from "react-toastify";
-import { useCart } from "react-use-cart";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,6 +15,7 @@ type UseFormInputs = {
 };
 
 export default function Payment() {
+  const { t } = useTranslation();
   const [nameOnCard, setNameOnCard] = useState<string>("");
   const [cardNumber, setCardNumber] = useState("");
   const [securityCode, setSecurityCode] = useState("");
@@ -39,7 +42,7 @@ export default function Payment() {
             </div>
             <div className="mb-10">
               <h1 className="text-center font-bold text-xl uppercase">
-                Secure payment info
+                {t("titles.payment")}
               </h1>
             </div>
             <div className="mb-3 flex -mx-2">
@@ -76,7 +79,7 @@ export default function Payment() {
             </div>
             <div className="mb-3">
               <label className="font-bold text-sm mb-2 ml-1">
-                Name on card
+                {t("labels.name_on_card")}
               </label>
               <div>
                 <input
@@ -90,7 +93,9 @@ export default function Payment() {
               </div>
             </div>
             <div className="mb-3">
-              <label className="font-bold text-sm mb-2 ml-1">Card number</label>
+              <label className="font-bold text-sm mb-2 ml-1">
+                {t("labels.card_number")}
+              </label>
               <div>
                 <input
                   value={cardNumber}
@@ -105,7 +110,7 @@ export default function Payment() {
             <div className="mb-3 -mx-2 flex items-end">
               <div className="px-2 w-1/2">
                 <label className="font-bold text-sm mb-2 ml-1">
-                  Expiration date
+                  {t("labels.expiration_date")}
                 </label>
                 <div>
                   <select
@@ -146,11 +151,13 @@ export default function Payment() {
               </div>
             </div>
             <div className="mb-10">
-              <label className="font-bold text-sm mb-2 ml-1">Price</label>
+              <label className="font-bold text-sm mb-2 ml-1">
+                {t("labels.price")}
+              </label>
               <div className="ml-1 my-2">{cartTotal}$</div>
               <div className="mb-10">
                 <label className="font-bold text-sm mb-2 ml-1">
-                  Security code
+                  {t("labels.security_code")}
                 </label>
                 <div>
                   <input
@@ -165,7 +172,7 @@ export default function Payment() {
               </div>
               <div className="flex justify-center">
                 <PrimaryBtn type="submit">
-                  <i className="mdi mdi-lock-outline mr-1"></i> PAY NOW
+                  <i className="mdi mdi-lock-outline mr-1"></i> {t("btn.pay")}
                 </PrimaryBtn>
                 <ToastContainer />
               </div>

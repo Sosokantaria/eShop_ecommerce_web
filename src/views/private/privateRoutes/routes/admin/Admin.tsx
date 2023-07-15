@@ -1,4 +1,5 @@
 import { useState, lazy } from "react";
+import { useTranslation } from "react-i18next";
 
 import { RxUpdate } from "react-icons/rx";
 import { MdDeleteForever } from "react-icons/md";
@@ -16,6 +17,7 @@ const enum View {
 }
 
 export default function AdminView() {
+  const{t}=useTranslation()
   const [view, setView] = useState<View>(View.CREATE);
 
   return (
@@ -41,7 +43,7 @@ export default function AdminView() {
               className="font-medium leading-tight"
               style={{ color: view === "create" ? "red" : "black" }}
             >
-              create product
+           {t("titles.create_product")}
             </h3>
           </span>
         </div>
@@ -64,7 +66,7 @@ export default function AdminView() {
               className="font-medium leading-tight"
               style={{ color: view === "update" ? "red" : "black" }}
             >
-              update product
+              {t("titles.update_product")}
             </h3>
           </span>
         </div>
@@ -87,7 +89,7 @@ export default function AdminView() {
               className="font-medium leading-tight"
               style={{ color: view === "delete" ? "red" : "black" }}
             >
-              delete product
+               {t("titles.delete_product")}
             </h3>
           </span>
         </div>

@@ -62,7 +62,8 @@
         "delete_product":"Delete Product",
         "update_product":"Update Product",
         "payment":"Secure payment info",
-        "cart":"Shoping cart"
+        "cart":"Shoping cart",
+        "similar_products":"Similar products"
     },
     "texts":{
         "contuct_us":"Got a technical issue? Want to send feedback? Need details? Let us know.",

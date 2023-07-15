@@ -10,6 +10,7 @@ import { NavForRouteViews } from "../../components/navForRoureViews";
 import Logo from "./Logo/FqEhzfAVau7FtJvshFOPaUi72JCBk8mhIWUmOwwB.png";
 import { CartContext } from "../../contexts/cartContext";
 import { SearchContext } from "../../contexts/searchContext";
+import { Select_languages } from "../../components/multilanguage/selectLanguages";
 
 export function Header() {
   const { setModal } = useContext(CartContext);
@@ -24,6 +25,7 @@ export function Header() {
               <CgPhone />
               <span>hotline text</span>
             </span>
+            <Select_languages/>
           </div>
         </div>
       </div>

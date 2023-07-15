@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { IoIosHome } from "react-icons/io";
 import { BsInfoLg, BsShop } from "react-icons/bs";
@@ -11,6 +12,7 @@ const enum View {
 }
 
 export function NavForRouteViews() {
+  const {t}=useTranslation()
   const [active, setActive] = useState<View>(View.HOME);
   return (
     <><div  onClick={() => setActive(View.HOME)}>
@@ -20,7 +22,7 @@ export function NavForRouteViews() {
       >
         <IoIosHome className="text-[#fcc861] scale-150  " />
         <div style={{ color: active === "home" ? "white" : "gray" }}>
-          home
+          {t("btn.home")}
         </div>
       </Link></div>
       <Link
@@ -30,7 +32,7 @@ export function NavForRouteViews() {
       >
         <BsShop className="text-[#fcc861] scale-150  " />
         <div style={{ color: active === "shop" ? "white" : "gray" }}>
-          shop
+        {t("btn.shop")}
         </div>
       </Link>
       <Link
@@ -40,7 +42,7 @@ export function NavForRouteViews() {
       >
         <BsInfoLg className="text-[#fcc861] scale-150  " />
         <div style={{ color: active === "contactUs" ? "white" : "gray" }}>
-          contact us
+        {t("btn.contuct_us")}
         </div>
       </Link>
     </>

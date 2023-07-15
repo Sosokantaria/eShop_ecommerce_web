@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
+import { useTranslation } from "react-i18next";
 
 import { PrimaryBtn } from "../buttons";
 
@@ -9,6 +10,7 @@ import { authContext } from "../../contexts/authContext";
 import type { TProducts } from "../../types/product";
 
 export function ProductCard(props: TProducts) {
+  const {t}=useTranslation()
   const { title, price, id, item } = props;
   const { status } = useContext(authContext);
 
@@ -79,8 +81,8 @@ export function ProductCard(props: TProducts) {
         </div>
         <div className="flex flex-col flex-wrap gap-3 items-center justify-between">
           <span className="text-3xl items-center font-bold flex gap-2 text-gray-900 ">
-            <span> price:</span>
-            <span>{price}</span>
+            <span> {t("texts.price")}</span>
+            <span>{price}$</span>
           </span>
           <div className="flex items-center gap-3">
             <PrimaryBtn
@@ -89,20 +91,20 @@ export function ProductCard(props: TProducts) {
                    addItem(item)
               }}
              >
-              Addtocart
+            {t("btn.add_to_cart")}
             </PrimaryBtn>
             {status === "authorized" ? (
               <Link to="/payment" className="w-full">
                 <PrimaryBtn type="submit" className="w-full font-bold"  onClick={()=>{
                    addItem(item)
               }}>
-                 bye
+                 {t("btn.buy")}
                 </PrimaryBtn>
               </Link>
             ) : (
               <Link to="/login" className="w-full">
                 <PrimaryBtn type="submit" className="w-full font-bold">
-                  bye
+                {t("btn.buy")}
                 </PrimaryBtn>
               </Link>
             )}

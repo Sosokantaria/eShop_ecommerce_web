@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import useOnclickOutside from "react-cool-onclickoutside";
 
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
@@ -10,6 +11,7 @@ import { CartContext } from "../../contexts/cartContext";
 import { authContext } from "../../contexts/authContext";
 
 export function CartModal() {
+  const {t}=useTranslation()
   const { modal, setModal } = useContext(CartContext);
   const { status } = useContext(authContext);
   const {
@@ -47,7 +49,7 @@ export function CartModal() {
                     className="text-lg font-medium text-gray-900"
                     id="slide-over-title"
                   >
-                    Shopping cart
+                    {t("titles.cart")}
                   </h2>
                   <div className="ml-3 flex h-7 items-center">
                     <button
@@ -131,7 +133,7 @@ export function CartModal() {
                                     onClick={() => removeItem(item.id)}
                                     type="submit"
                                   >
-                                    Remove
+                                    {t("btn.remove")}
                                   </TextBtn>
                                 </div>
                               </div>
@@ -145,15 +147,15 @@ export function CartModal() {
               </div>
               <div className="border-t border-gray-200 flex flex-col gap-5 px-4 py-6 sm:px-6">
                 <div className="flex justify-between text-base font-medium text-gray-900">
-                  <p>total items</p>
+                  <p>{t("texts.total_items")}</p>
                   <p>{totalItems}</p>
                 </div>
                 <div className="flex justify-between text-base font-medium text-gray-900">
-                  <p>Subtotal</p>
+                  <p>{t("texts.subtotal")}</p>
                   <p>{cartTotal}$</p>
                 </div>
                 <PrimaryBtn onClick={() => emptyCart()} type="submit">
-                  Remove all items
+                 {t("btn.remove_all_items")}
                 </PrimaryBtn>
                 {status === "authorized" ? (
                   <Link to="/payment" className="w-full">
@@ -162,7 +164,7 @@ export function CartModal() {
                       className="w-full font-bold"
                       onClick={() => setModal(false)}
                     >
-                      buy
+                      {t("btn.buy")}
                     </PrimaryBtn>
                   </Link>
                 ) : (
@@ -172,7 +174,7 @@ export function CartModal() {
                       className="w-full font-bold"
                       onClick={() => setModal(false)}
                     >
-                      buy
+                    {t("btn.buy")}
                     </PrimaryBtn>
                   </Link>
                 )}

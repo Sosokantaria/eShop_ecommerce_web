@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { PrimaryBtn, LinkBtn } from "../../../../components/buttons";
 
@@ -16,6 +17,7 @@ type TRegisterForm = {
 };
 
 export default function RegisterView() {
+  const{t}=useTranslation()
   const [created, setCreated] = useState<boolean>(false);
   const {
     register,
@@ -40,15 +42,15 @@ export default function RegisterView() {
         <div className="w-full m-auto text-[white] rounded-lg shadow bg-[#1f2605]  sm:max-w-sm p-6  ">
           <div className="flex justify-center ">
             <h1 className="text-xl font-bold md:text-2xl ">
-              register
+             {t("titles.register")}
             </h1>
           </div>{" "}
           {created ? (
             <span className="flex  font-medium items-center justify-center text-[green]  space-x-3">
-              <span>created user</span>
+              <span>{t("created_user")}</span>
               <Link to="/login">
                 <LinkBtn type="submit">
-                  <p>login</p>
+                  <p>{t("btn.login")}</p>
                 </LinkBtn>
               </Link>
             </span>
@@ -58,7 +60,7 @@ export default function RegisterView() {
                 name="username"
                 label={
                   <label style={{ color: "white" }}>
-                    username
+                    {t("labels.userName")}
                   </label>
                 }
                 rules={[
@@ -72,7 +74,7 @@ export default function RegisterView() {
               </Form.Item>
               <Form.Item
                 label={
-                  <label style={{ color: "white" }}>email</label>
+                  <label style={{ color: "white" }}>{t("labels.email")}</label>
                 }
                 name="email"
                 rules={[
@@ -84,7 +86,7 @@ export default function RegisterView() {
               <Form.Item
                 label={
                   <label style={{ color: "white" }}>
-                    password
+                    {t("labels.password")}
                   </label>
                 }
                 name="password"
@@ -105,14 +107,14 @@ export default function RegisterView() {
                   <PrimaryBtn
                     type="submit"
                    >
-                    register
+                   {t("btn.register")}
                   </PrimaryBtn>
                 </div>
                 <p className="text-sm font-medium text-[white] flex space-x-3">
-                  <span>question for login</span>
+                  <span>{t("texts.question.register")}</span>
                   <Link to="/login">
                     <LinkBtn type="submit">
-                      <span>login</span>
+                      <span>{t("btn.login")}</span>
                     </LinkBtn>
                   </Link>
                 </p>

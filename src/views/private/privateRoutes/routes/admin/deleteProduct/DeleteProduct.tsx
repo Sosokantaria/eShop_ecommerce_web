@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { PrimaryBtn } from "../../../../../../components/buttons";
 
 
@@ -10,6 +11,7 @@ type TData={
 }
 
 export default function DeleteProduct() {
+  const {t}=useTranslation()
   const { register, handleSubmit, reset } = useForm<TData>();
   async function DeleteProduct(data:TData) {
     try {
@@ -27,7 +29,7 @@ export default function DeleteProduct() {
     <section >
       <div className="bg-[#1f2605] py-8 px-4 mx-auto min-w-[50%] max-w-2xl rounded-lg w-full">
         <h2 className="mb-4 text-xl font-bold text-[white]">
-         delete product
+        {t("titles.delete_product")}
         </h2>
         <form onSubmit={handleSubmit(DeleteProduct)}>
           <div className="flex flex-col sm:gap-6">
@@ -45,7 +47,7 @@ export default function DeleteProduct() {
               />
             </div>
             <div className="flex justify-center w-full">
-              <PrimaryBtn>delete product</PrimaryBtn>
+              <PrimaryBtn>{t("btn.delete_product")}</PrimaryBtn>
             </div>
           </div>
         </form>

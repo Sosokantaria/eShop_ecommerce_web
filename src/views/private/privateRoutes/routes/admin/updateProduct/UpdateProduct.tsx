@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { PrimaryBtn } from "../../../../../../components/buttons";
 
 type TData = {
@@ -10,13 +11,13 @@ type TData = {
   description: string;
 };
 export default function UpdateProduct() {
+  const{t}=useTranslation()
   const { register, handleSubmit, reset } = useForm<TData>();
   const [id, setId] = useState("");
   const [checkboxTitle, setCheckboxTitle] = useState(false);
   const [checkboxDecription, setCheckboxDecription] = useState(false);
   const [checkboxPrice, setCheckboxPrice] = useState(false);
   async function UpdateProduct(data: TData) {
-    console.log(data);
 
     try {
       await axios.put(`http://localhost:3001/products/${id}`, data, {
@@ -39,7 +40,10 @@ export default function UpdateProduct() {
   return (
     <section >
       <div className="w-full bg-[#1f2605] rounded-xl p-5 flex flex-col gap-5 justify-between">
-        <div className="flex gap-5 max-sm:flex-col">
+      <h2 className="mb-4 text-xl font-bold text-[white]">
+        {t("titles.update_product")}
+        </h2>
+          <div className="flex gap-5 max-sm:flex-col">
           <ul className="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex ">
             <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
@@ -54,7 +58,7 @@ export default function UpdateProduct() {
                   htmlFor="react-checkbox-list"
                   className="w-full py-3 ml-2 text-sm font-medium text-gray-900 "
                 >
-                 update by title
+                 {t("btn.checkboxes.update_title")}
                 </label>
               </div>
             </li>
@@ -72,7 +76,7 @@ export default function UpdateProduct() {
                   htmlFor="laravel-checkbox-list"
                   className="w-full py-3 ml-2 text-sm font-medium text-gray-900 "
                 >
-                  update by price
+                  {t("btn.checkboxes.update_price")}
                 </label>
               </div>
             </li>
@@ -89,7 +93,7 @@ export default function UpdateProduct() {
                   htmlFor="angular-checkbox-list"
                   className="w-full py-3 ml-2 text-sm font-medium text-gray-900 "
                 >
-                update by description
+                {t("btn.checkboxes.update_description")}
                 </label>
               </div>
             </li>
@@ -113,7 +117,7 @@ export default function UpdateProduct() {
             </div>
             {checkboxTitle && (
               <div className="w-full text-white">
-                <p>title</p>
+                <p>{t("labels.title")}</p>
                 <input
                   className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 "
                   {...register("title", { required: true })}
@@ -126,7 +130,7 @@ export default function UpdateProduct() {
            
             {checkboxPrice && (
               <div className="w-full text-white">
-                <p>price</p>
+                <p>{t("labels.price")}</p>
                 <input
                   className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 "
                   type="number"
@@ -141,13 +145,13 @@ export default function UpdateProduct() {
             )}
              {checkboxDecription && (
               <div className="w-full text-white">
-                <p>description</p>
+                <p>{t("labels.description")}</p>
                   <textarea
                 {...register("description", { required: true })}
                 id="description"
                 name="description"
                 className="block p-2.5 w-full text-sm text-[black] bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
-                placeholder="Your description here"
+                placeholder={t("placeHolder.description")}
               ></textarea>
               </div>
             )}
@@ -155,7 +159,7 @@ export default function UpdateProduct() {
           <PrimaryBtn
             type="submit"
             >
-            change
+            {t("btn.change")}
           </PrimaryBtn>
         </form>
       </div>

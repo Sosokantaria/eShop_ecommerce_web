@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import "flag-icon-css/css/flag-icons.css";
+import "./components/multilanguage"
 
 import { ConfigProvider } from "antd";
 import { BrowserRouter } from "react-router-dom";

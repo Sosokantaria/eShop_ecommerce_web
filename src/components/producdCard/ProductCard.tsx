@@ -11,8 +11,9 @@ import type { TProducts } from "../../types/product";
 
 export function ProductCard(props: TProducts) {
   const {t}=useTranslation()
-  const { title, price, id, item } = props;
+  const { title, price, id, item, category } = props;
   const { status } = useContext(authContext);
+
 
   const { addItem } = useCart();
   return (
@@ -24,7 +25,7 @@ export function ProductCard(props: TProducts) {
         />
       </div>
       <div className="flex flex-wrap  flex-col items-center justify-center">
-        <Link to={`/product/${id}`}>
+        <Link to={`/product/${category}/${title}/${id}`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
             {title}
           </h5>
@@ -102,7 +103,7 @@ export function ProductCard(props: TProducts) {
                 </PrimaryBtn>
               </Link>
             ) : (
-              <Link to="/login" className="w-full">
+              <Link to="/login/login" className="w-full">
                 <PrimaryBtn type="submit" className="w-full font-bold">
                 {t("btn.buy")}
                 </PrimaryBtn>

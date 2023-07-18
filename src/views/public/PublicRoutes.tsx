@@ -5,6 +5,6 @@ const LoginView = lazy(() => import("./routes/login"));
 const RegisterView = lazy(() => import("./routes/register"));
 
 export default [
-  <Route path="/login" element={<LoginView />} key="privateRoute" />,
-  <Route path="/register" element={<RegisterView />} key="privateRoute" />,
+  <Route path="/login/:login" element={<LoginView />} key="privateRoute" />,
+  <Route path="/register/:register" element={<RegisterView />} key="privateRoute" />,
 ];

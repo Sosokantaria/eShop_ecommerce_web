@@ -11,7 +11,7 @@ import { CartContext } from "../../contexts/cartContext";
 import { authContext } from "../../contexts/authContext";
 
 export function CartModal() {
-  const {t}=useTranslation()
+  const { t } = useTranslation();
   const { modal, setModal } = useContext(CartContext);
   const { status } = useContext(authContext);
   const {
@@ -78,7 +78,7 @@ export function CartModal() {
                   <div className="flow-root">
                     <ul role="list" className="-my-6 divide-y divide-gray-200">
                       {items.map((item: any) => (
-                        <div key={item.id} >
+                        <div key={item.id}>
                           <li className="flex py-6 flex-wrap items-center justify-center p-5">
                             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                               <img
@@ -155,7 +155,7 @@ export function CartModal() {
                   <p>{cartTotal}$</p>
                 </div>
                 <PrimaryBtn onClick={() => emptyCart()} type="submit">
-                 {t("btn.remove_all_items")}
+                  {t("btn.remove_all_items")}
                 </PrimaryBtn>
                 {status === "authorized" ? (
                   <Link to="/payment" className="w-full">
@@ -168,13 +168,13 @@ export function CartModal() {
                     </PrimaryBtn>
                   </Link>
                 ) : (
-                  <Link to="/login" className="w-full">
+                  <Link to="/login/login" className="w-full">
                     <PrimaryBtn
                       type="submit"
                       className="w-full font-bold"
                       onClick={() => setModal(false)}
                     >
-                    {t("btn.buy")}
+                      {t("btn.buy")}
                     </PrimaryBtn>
                   </Link>
                 )}

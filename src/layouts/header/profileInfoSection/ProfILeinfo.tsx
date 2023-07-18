@@ -49,7 +49,7 @@ export function ProfileInfo() {
                 <>
                   <TextBtn type="submit">
                     <Link
-                      to="/admin-view"
+                      to="/adminView"
                       onClick={() => setIsopen(!isopen)}
                     >
                       {t("btn.adminPanel")}
@@ -60,7 +60,7 @@ export function ProfileInfo() {
               )}
               <TextBtn type="submit">
                 <Link
-                  to="/user-view"
+                  to="/userView"
                   onClick={() => setIsopen(!isopen)}
                 >
                   {t("btn.profile_info")}
@@ -81,13 +81,13 @@ export function ProfileInfo() {
             </div>
           ) : (
             <div className="flex flex-col m-1 items-center ">
-              <Link to="login">
+              <Link to="/Login/Login">
                 <TextBtn type="submit" onClick={() => setIsopen(!isopen)}>
                 {t("btn.login")}
                 </TextBtn>
               </Link>
               <hr className=" mt-1 text-[gray] sm:mx-auto  " />
-              <Link to="register">
+              <Link to="register/Register">
                 <TextBtn type="submit" onClick={() => setIsopen(!isopen)}>
                 {t("btn.register")}
                 </TextBtn>

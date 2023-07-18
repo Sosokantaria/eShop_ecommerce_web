@@ -6,6 +6,7 @@ import { Filter } from "../../../components/filterproducts";
 import { ProductCard } from "../../../components/producdCard";
 
 import type { TProducts } from "../../../types/product";
+import { Navigation } from "../../../components/navigation";
 
 export default function FilteredView() {
   const param: any = useParams();
@@ -33,25 +34,28 @@ export default function FilteredView() {
   }, [param]);
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Filter />
-      <div className="flex flex-wrap m-auto w-full p-6 justify-center gap-3">
-        {array.map((item: any) => (
-          <div
-            key={item.id}
-            className="w-full max-w-sm bg-gray-200 border-[gray] bg-[#fce2ad9a] flex flex-col  flex-wrap justify-center items-center gap-3 py-5 rounded-lg shadow "
-          >
-            <ProductCard
-              id={item.id}
-              price={item.price}
-              title={item.title}
-              description={item.description}
-              item={item}
-              category={item.category}
-            />
-          </div>
-        ))}
+    <>
+      <Navigation />
+      <div className="flex flex-col justify-center items-center">
+        <Filter />
+        <div className="flex flex-wrap m-auto w-full p-6 justify-center gap-3">
+          {array.map((item: any) => (
+            <div
+              key={item.id}
+              className="w-full max-w-sm bg-gray-200 border-[gray] bg-[#fce2ad9a] flex flex-col  flex-wrap justify-center items-center gap-3 py-5 rounded-lg shadow "
+            >
+              <ProductCard
+                id={item.id}
+                price={item.price}
+                title={item.title}
+                description={item.description}
+                item={item}
+                category={item.category}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

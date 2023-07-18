@@ -90,7 +90,7 @@ export function Search() {
                             setProducts([]),
                               setSearchValue(""),
                               setSearch(false),
-                              navigate(`/product/${item.id}`);
+                              navigate(`/product/category/${item.title}/${item.id}`);
                           }}
                         >
                           <img className="w-24" src={Logo} />

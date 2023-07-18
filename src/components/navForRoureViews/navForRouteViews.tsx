@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { IoIosHome } from "react-icons/io";
@@ -9,16 +9,29 @@ const enum View {
   HOME = "home",
   SHOP = "shop",
   CONTUCTUS = "contactUs",
+  ELSE="ELSE"
 }
 
-
-
 export function NavForRouteViews() {
+  const params = useParams();
+  console.log(params);
+
   const { t } = useTranslation();
   const [active, setActive] = useState<View>(View.HOME);
+
+  useEffect(() => {
+    if (params.shop) {
+      setActive(View.SHOP);
+    } else if (Object.keys(params).length === 0) {
+      setActive(View.HOME);
+    } else if (params.ContactUs) {
+      setActive(View.CONTUCTUS);
+    } else {setActive(View.ELSE)}
+  }, [params]);
+
   return (
     <>
-      <div  onClick={()=>setActive(View.HOME)}>
+      <div>
         <Link
           to="/"
           className=" flex flex-col items-center gap-y-2 px-1 py-1 text-gray-500  font-medium rounded-lg text-sm   "
@@ -31,7 +44,6 @@ export function NavForRouteViews() {
       </div>
       <Link
         to="Products/shop"
-        onClick={() => setActive(View.SHOP)}
         className="flex flex-col items-center gap-y-2 px-1 py-1 text-gray-500   font-medium rounded-lg text-sm   "
       >
         <BsShop className="text-[#fcc861] scale-150  " />
@@ -41,7 +53,6 @@ export function NavForRouteViews() {
       </Link>
       <Link
         to="/Contact-us/ContactUs"
-        onClick={() => setActive(View.CONTUCTUS)}
         className="flex flex-col items-center gap-y-2 py-1 text-gray-500  font-medium rounded-lg text-sm    "
       >
         <BsInfoLg className="text-[#fcc861] scale-150  " />

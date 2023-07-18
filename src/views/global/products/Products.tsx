@@ -5,6 +5,7 @@ import { ProductCard } from "../../../components/producdCard";
 import { Filter } from "../../../components/filterproducts";
 
 import { Pagination } from "antd";
+import { Navigation } from "../../../components/navigation";
 
 type TProducts = {
   id: string;
@@ -28,15 +29,16 @@ export default function ProductsView() {
 
     try {
       const skipedProducts = calcSkiptedProducts(currentPage, 10);
-      
-     setTotalItems((await axios.get("http://localhost:3001/products?")).data.length)
+
+      setTotalItems(
+        (await axios.get("http://localhost:3001/products?")).data.length
+      );
       const resp = await axios.get(
         `http://localhost:3001/products?skip=${skipedProducts}&take=${10}`
       );
       setProducts(resp.data);
       setLoading(false);
-    } catch (error) {
-    }
+    } catch (error) {}
   }
 
   const handlePageChange = (page: number) => {
@@ -49,6 +51,7 @@ export default function ProductsView() {
 
   return (
     <div>
+      <Navigation />
       {loading ? (
         <p className=" flex justify-center text-[black]  m-auto font-bold">
           loading...

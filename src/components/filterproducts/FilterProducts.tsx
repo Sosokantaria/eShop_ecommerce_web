@@ -11,7 +11,7 @@ export function Filter() {
   const [maxValue, setMaxValue] = useState(0);
   function FilterByPrice(min: number, max: number) {
    if(  min < max) {
-    navigate(`/FilteredProducts/${min}/${max}`);
+    navigate(`/FilteredProducts/shop/${min}/${max}`);
    }
   }
   return (

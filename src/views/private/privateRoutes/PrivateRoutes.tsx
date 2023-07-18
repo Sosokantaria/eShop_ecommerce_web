@@ -16,7 +16,7 @@ export function PrivateRoutes({ currentRole }: PrivateRouteProps) {
   return (
     <Routes>
       <Route
-        path="/user-view"
+        path="/userView"
         element={
           <PrivateRoute
             currentRole={currentRole}
@@ -36,7 +36,7 @@ export function PrivateRoutes({ currentRole }: PrivateRouteProps) {
         }
       />
       <Route
-        path="/admin-view"
+        path="/adminView"
         element={
           <PrivateRoute
             currentRole={currentRole}

@@ -14,7 +14,6 @@ const enum View {
 
 export function NavForRouteViews() {
   const params = useParams();
-  console.log(params);
 
   const { t } = useTranslation();
   const [active, setActive] = useState<View>(View.HOME);

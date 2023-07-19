@@ -48,7 +48,7 @@ export default function CreateProduct() {
                 type="text"
                 name="title"
                 id="title"
-                className="bg-gray-50 border border-gray-300 text-[white] text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                className="bg-gray-50 border border-gray-300 text-[black] text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                 placeholder={t("placeHolder.product_title")}
               />
             </div>
@@ -64,7 +64,7 @@ export default function CreateProduct() {
                 })}
                 name="price"
                 id="price"
-                className="bg-gray-50 border border-gray-300 text-[white] text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                className="bg-gray-50 border border-gray-300 text-[black] text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                 placeholder="$2999"
               />
             </div>
@@ -77,7 +77,7 @@ export default function CreateProduct() {
                 type="text"
                 name="category"
                 id="category"
-                className="bg-gray-50 border border-gray-300 text-[white] text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                className="bg-gray-50 border border-gray-300 text-[black] text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
               />
             </div>
             <div className="sm:col-span-2">

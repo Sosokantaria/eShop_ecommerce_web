@@ -60,7 +60,7 @@ export default function ContactUs() {
               >
                 {t("btn.send_message")}
               </PrimaryBtn>
-              <div className="flex gap-4 items-center mb-10 justify-center">
+              <div className="flex gap-4  flex-col items-center mb-10 justify-center">
                 <Address />
               </div>
             </form>

@@ -52,7 +52,7 @@ export default function UpdateProduct() {
                   type="checkbox"
                   value=""
                   onChange={() => setCheckboxTitle(!checkboxTitle)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 "
+                  className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded focus:ring-gray-500 "
                 />
                 <label
                   htmlFor="react-checkbox-list"
@@ -70,7 +70,7 @@ export default function UpdateProduct() {
                   type="checkbox"
                   value=""
                   onChange={() => setCheckboxPrice(!checkboxPrice)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 "
+                  className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded focus:ring-gray-500 "
                 />
                 <label
                   htmlFor="laravel-checkbox-list"
@@ -87,7 +87,7 @@ export default function UpdateProduct() {
                   type="checkbox"
                   value=""
                   onChange={() => setCheckboxDecription(!checkboxDecription)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 "
+                  className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded focus:ring-gray-500 "
                 />
                 <label
                   htmlFor="angular-checkbox-list"

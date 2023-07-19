@@ -75,7 +75,8 @@
         },
         "created_user":"Account created successfully!",
         "total_items":"Total items:",
-        "subtotal":"Amount to be paid:"
+        "subtotal":"Amount to be paid:",
+        "top_products":"Top products"
         
     }
     

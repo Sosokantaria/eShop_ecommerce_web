@@ -8,7 +8,7 @@ import { Pagination } from "antd";
 import { Navigation } from "../../../components/navigation";
 
 export default function SearchedProducts() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<any>([]);
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const params = useParams();
@@ -42,29 +42,36 @@ export default function SearchedProducts() {
 
   useEffect(() => {
     SearchedProducts();
-  }, [currentPage]);
+  }, [currentPage, params]);
 
   return (
     <>
       <Navigation />
       <div className="flex flex-col items-center flex-wrap m-auto w-full p-6 justify-center gap-3">
-        <div className="flex flex-wrap m-auto   w-full p-6 justify-center gap-3">
-          {products.map((item: TProducts) => (
-            <div
-              key={item.id}
-              className="w-full max-w-sm bg-gray-200 border-[gray] bg-[#fce2ad9a] flex flex-col  flex-wrap justify-center items-center gap-3 py-5 rounded-lg shadow "
-            >
-              <ProductCard
-                id={item.id}
-                price={item.price}
-                title={item.title}
-                description={item.description}
-                item={item}
-                category={item.category}
-              />
-            </div>
-          ))}
-        </div>
+        {products.length === 0 ? (
+          <div className="text-[red] flex items-center justify-center h-full cursor-default">
+            could not find product
+          </div>
+        ) : (
+          <div className="flex flex-wrap m-auto w-full p-6 justify-center gap-3">
+            {products.map((item: TProducts) => (
+              <div
+                key={item.id}
+                className="w-full max-w-sm bg-gray-200 border-[gray] bg-[#fce2ad9a] flex flex-col  flex-wrap justify-center items-center gap-3 py-5 rounded-lg shadow "
+              >
+                <ProductCard
+                  id={item.id}
+                  price={item.price}
+                  title={item.title}
+                  description={item.description}
+                  item={item}
+                  category={item.category}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="m-10">
           <Pagination
             onChange={handlePageChange}

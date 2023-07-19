@@ -82,7 +82,7 @@ export function Search() {
                     className={`w-full mx-auto h-96 bg-white mt-3  overflow-y-scroll shadow-lg scrollbar-hide cursor-pointer`}
                   >
                     {products.length > 0 ? (
-                      products.map((item: { id: string; title: string }) => (
+                      products.map((item: { id: string; title: string}) => (
                         <div
                           className="flex-wrap overflow-hidden max-w-[600px] h-auto p-3 bg-gray-100 m-5 flex items-center gap-3"
                           key={item.id}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import i18next from "i18next";
 import cookies from "js-cookie";
 import classNames from "classnames";
@@ -25,6 +25,14 @@ export function Select_languages() {
   const ref = useOnclickOutside(() => {
     setIsopen(false);
   });
+
+  useEffect(() => {
+    if (currentLanguageCode === "ge") {
+      setCurrentCode("ge");
+    } else {
+      setCurrentCode("gb");
+    }
+  }, []);
   return (
     <div ref={ref} className="relative inline-block  flex-col items-right">
       <button
@@ -46,7 +54,6 @@ export function Select_languages() {
       {isopen && (
         <div
           id="dropdown"
-          
           className="absolute right-0 z-10  w-28 items-center text-[black] origin-top-right rounded-md bg-white "
         >
           <ul className="text-sm mb-0">

@@ -25,7 +25,8 @@
         "change":"Change",
         "add_to_cart":"Add To Cart",
         "pay":"Pay",
-        "remove":"Remove"
+        "remove":"Remove",
+        "navigation":"Navigation"
     },
     "labels":{
         "userName":"Username",
